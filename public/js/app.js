@@ -36186,7 +36186,6 @@ var Example = function (_Component) {
         _this.state = {
             yamakis: []
         };
-
         return _this;
     }
 

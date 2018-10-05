@@ -4,11 +4,9 @@ import ReactDOM from 'react-dom';
 export default class Example extends Component {
     constructor() {
         super();
-
         this.state = {
             yamakis: []
         };
-
     }
 
     componentDidMount() {
