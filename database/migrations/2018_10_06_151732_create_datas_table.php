@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInputDataTable extends Migration
+class CreateDatasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateInputDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('input_data', function (Blueprint $table) {
+        Schema::create('datas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("number");
-            $table->integer("shot");
-            $table->integer("GB");
-            $table->integer("miss");
+            $table->integer('number');
+            $table->integer('shot');
+            $table->integer('GB');
+            $table->integer('miss');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateInputDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('input_data');
+        Schema::dropIfExists('datas');
     }
 }

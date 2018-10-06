@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('sample/react', 'SampleController@react');
+Route::get('/', 'SampleController@react');

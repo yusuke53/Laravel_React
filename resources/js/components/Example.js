@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Header from "./Header";
+import Menu from "./Menu";
+import Input from "./Input";
+import Games from "./Games";
 
-export default class Example extends Component {
+export default class Main extends Component {
     constructor() {
         super();
         this.state = {
-            yamakis: []
+            yamakis: [],
+            currentPage:"データ一覧"
         };
+        this.changePage = this.changePage.bind(this);
+    }
+    changePage(currentPage) {
+
+        this.setState({currentPage: currentPage})
+
     }
 
     componentDidMount() {
@@ -32,12 +43,29 @@ export default class Example extends Component {
         });
     }
     render() {
+        const currentPage = this.state.currentPage;
+        let Content = null;
+
+        switch (currentPage) {
+            case"データ一覧":
+                Content = (() => <Games />);
+                break;
+            case "データ入力":
+                Content = (() => <Input />);
+                break;
+        }
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-md-8 col-md-offset-2">
                         <div className="panel panel-default">
-                            <div className="panel-heading">Example Component</div>
+                            <div className="panel-heading"><Header /></div>
+                            <Menu
+
+                                changePage={this.changePage}
+
+                            />
+                            <Content />
 
                             <div className="panel-body">
                                 <ul>
@@ -54,5 +82,5 @@ export default class Example extends Component {
 
 
 if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
+    ReactDOM.render(<Main />, document.getElementById('example'));
 }
