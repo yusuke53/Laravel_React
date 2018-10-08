@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Data;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DataController extends Controller
 {
@@ -14,7 +15,9 @@ class DataController extends Controller
      */
     public function index()
     {
+        $data = Data::all();
 
+        return response()->json($data);
     }
 
     /**

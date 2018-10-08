@@ -36268,8 +36268,7 @@ var Main = function (_Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'panel-heading' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Header__["a" /* default */], null),
-                                't'
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Header__["a" /* default */], null)
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Menu__["a" /* default */], {
 
@@ -57387,52 +57386,39 @@ var Input = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this, props));
 
         _this.state = {
-
             number: '',
-
             shot: 0,
-
             GB: 0,
-
             miss: 0
-
         };
-
         _this.handleSubmit = _this.handleSubmit.bind(_this);
-
         _this.handleChangeNumber = _this.handleChangeNumber.bind(_this);
-
         return _this;
     }
 
     _createClass(Input, [{
         key: 'handleSubmit',
         value: function handleSubmit(e) {
-
             e.preventDefault();
         }
     }, {
         key: 'handleChangeNumber',
         value: function handleChangeNumber(e) {
-
             this.setState({ number: e.target.value });
         }
     }, {
         key: 'addshot',
         value: function addshot() {
-
             this.setState({ shot: this.state.shot + 1 });
         }
     }, {
         key: 'addGB',
         value: function addGB() {
-
             this.setState({ GB: this.state.GB + 1 });
         }
     }, {
         key: 'addmiss',
         value: function addmiss() {
-
             this.setState({ miss: this.state.miss + 1 });
         }
     }, {

@@ -37,3 +37,4 @@ Route::get('/yamakis', function (Request $request) {
     return response()->json( $yamakis );
 
 });
+Route::resource('/data','Api\DataController');
