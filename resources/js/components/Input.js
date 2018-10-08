@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-
+import axios from 'axios';
 
 
 class Input extends React.Component {
@@ -8,14 +7,25 @@ class Input extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            number : '',
-            shot : 0,
-            GB : 0,
-            miss : 0
+            number: '',
+            shot: 0,
+            GB: 0,
+            miss: 0,
+            data: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeNumber = this.handleChangeNumber.bind(this);
     }
+    // componentWillMount(){
+    //     axios.get('/api/data').then(response => {
+    //         this.setState({
+    //             data: response.data
+    //         });
+    //         console.log('Not errors');
+    //     }).catch(errors =>{
+    //         console.log('errors');
+    //     })
+    // }
 
     handleSubmit(e){
         e.preventDefault();
@@ -64,6 +74,8 @@ class Input extends React.Component {
                 <button onClick={()=>this.addshot()}>shot</button>
                 <button onClick={()=>this.addGB()}>GB</button>
                 <button onClick={()=>this.addmiss()}>miss</button>
+
+                {this.state.data.map(data => <li>{data}</li>)}
 
             </div>
 

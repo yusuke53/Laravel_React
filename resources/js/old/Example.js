@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Header from "./Header";
 import Menu from "./Menu";
-import Input from "./Input";
-import Games from "./Games";
+import Input from "../components/Input";
+import Games from "../components/Games";
+import Home from "../components/Home";
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 
 export default class Main extends Component {
     constructor() {
@@ -61,9 +63,7 @@ export default class Main extends Component {
                         <div className="panel panel-default">
                             <div className="panel-heading"><Header /></div>
                             <Menu
-
                                 changePage={this.changePage}
-
                             />
                             <Content />
 
@@ -72,6 +72,15 @@ export default class Main extends Component {
                                     {this.renderYamakis()}
                                 </ul>
                             </div>
+                            <Router>
+                                <div>
+                                    <Link to="/">Home</Link>
+                                    <Link to="/input">Input</Link>
+
+                                    <Route path="/" exact component={Home}/>
+                                    <Route path="/input" exact component={Input}/>
+                                </div>
+                            </Router>
                         </div>
                     </div>
                 </div>

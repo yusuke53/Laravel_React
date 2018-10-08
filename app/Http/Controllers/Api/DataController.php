@@ -38,7 +38,14 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->data()->create([
+            'number' => $request->number,
+            'shot' => $request->shot,
+            'miss' => $request->miss,
+            'GB' => $request->GB,
+        ]);
+
+        return redirect('/input');
     }
 
     /**
