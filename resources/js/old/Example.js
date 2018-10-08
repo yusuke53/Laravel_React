@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Header from "./Header";
+import Header from "../components/Header";
 import Menu from "./Menu";
 import Input from "../components/Input";
 import Games from "../components/Games";

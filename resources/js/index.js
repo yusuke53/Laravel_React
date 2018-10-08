@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Input from "./components/Input";
-import Games from "./components/Games";
-import Home from "./components/Home";
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import Header from "./components/Header";
 
-export default class Main extends Component {
+export default class Index extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,20 +16,7 @@ export default class Main extends Component {
                     <div className="col-md-8 col-md-offset-2">
                         <div className="panel panel-default">
                             <div className="panel-heading" >
-                                <h1>Lacrosse Scouting</h1>
-                            </div>
-                            <div className="menu">
-                                <Router>
-                                    <div>
-                                        <li><Link to="/">Home</Link></li>
-                                        <li><Link to="/input">データを入力する</Link></li>
-                                        <li><Link to="/games">データ一覧</Link></li>
-
-                                        <Route path="/" exact component={Home}/>
-                                        <Route path="/input" exact component={Input}/>
-                                        <Route path="/games" exact component={Games}/>
-                                    </div>
-                                </Router>
+                                <Header />
                             </div>
                         </div>
                     </div>
@@ -44,5 +28,5 @@ export default class Main extends Component {
 
 
 if (document.getElementById('example')) {
-    ReactDOM.render(<Main />, document.getElementById('example'));
+    ReactDOM.render(<Index />, document.getElementById('example'));
 }
